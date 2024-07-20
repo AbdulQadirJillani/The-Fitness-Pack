@@ -1,0 +1,58 @@
+.nav {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 30;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  font-size: large;
+}
+
+.nav > span {
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.nav > i {
+  color: white;
+  display: none;
+}
+
+.nav > div {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  color: #F97316;
+}
+
+.nav > div > * {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 1rem 2rem;
+  }
+
+  .nav > .close {
+    display: none;
+  }
+
+  .nav > .open {
+    position: absolute;
+    background-color: rgb(41, 41, 41);
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    top: 60px;
+    right: 15px;
+  }
+
+  .nav > i {
+    display: block;
+  }
+}

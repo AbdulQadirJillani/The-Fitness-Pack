@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import trainer1 from '../assets/trainer1.png'
+import trainer2 from '../assets/trainer2.png'
+import trainer3 from '../assets/trainer3.png'
+const trainers = [
+    {image: trainer1, name: 'Mr Ronchi', designation: 'UPPERCUT BOXER'},
+    {image: trainer2, name: 'Miss Sarah', designation: 'JAB SMASHER'},
+    {image: trainer3, name: 'Starc Bravo', designation: 'HOOK GROGGY'}
+  ]
+---
+
+<div class='trainerscontainer'>
+    <div>
+      <h1>MEET OUR TRAINERS</h1>
+      <p>Our trainers are here to make sure that you need to get in the best shape of your life.</p>
+    </div>
+    <div>
+      {trainers.map((i) => (
+        <div>
+          <Image src={i.image} alt="" loading="eager" />
+          <h1>{i.name}</h1>
+          <span>{i.designation}</span>
+        </div>
+      ))}
+    </div>
+</div>
+
+<style>
+.trainerscontainer {
+  min-height: 100svh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.trainerscontainer > div:first-child > h1 {
+  color: #27272A;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bolder;
+}
+
+.trainerscontainer > div:first-child > p {
+  color: #52525B;
+  text-align: center;
+}
+
+.trainerscontainer > div:last-child {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.trainerscontainer > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: flip linear;
+  animation-timeline: view();
+}
+
+.trainerscontainer > div:last-child > div > img {
+  height: 55vh;
+  width: 100%;
+  margin-bottom: 15px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.trainerscontainer > div:last-child > div > h1 {
+  font-size: 1.1em;
+  color: #27272A;
+  font-weight: bolder;
+}
+
+.trainerscontainer > div:last-child > div > span {
+  font-weight: bold;
+  color: #71717A;
+}
+
+@keyframes flip {
+  0% { rotate: y 90deg; }
+  50%, 100% { rotate: y 0deg; }
+}
+
+@media (max-width:768px) {
+  .trainerscontainer {
+    gap: 3em;
+    padding: 1em;
+  }
+
+  .trainerscontainer > div:last-child {
+    flex-direction: column;
+    width: fit-content;
+    gap: 3em;
+  }
+}
+</style>

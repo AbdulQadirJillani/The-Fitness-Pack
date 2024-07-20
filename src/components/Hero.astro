@@ -1,0 +1,86 @@
+---
+import Nav from './Nav.jsx'
+---
+
+<div class='container'>
+  <Nav client:load/>
+  <div class='herocontainer'>
+    <div>
+      <h1>Hustle for the <span>Muscle</span></h1>
+      <p>Welcome to The Fitness Pack. We are fitness and training center commit to be fit.Download our complete brochure to get started today!</p>
+      <button>Download Brochure</button>
+    </div>
+  </div>
+</div>
+
+<style>
+    .container {
+  position: relative;
+}
+
+.herocontainer {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../assets/hero.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+.herocontainer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.herocontainer div h1 {
+  color: #E4E4E8;
+  font-size: 2em;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.herocontainer div h1 span {
+  color: var(--textclr);
+}
+
+.herocontainer div p {
+  color: #D4D4D8;
+  text-align: center;
+}
+
+.herocontainer button {
+  background-color: transparent;
+  outline: none;
+  padding: 0.5em 0.8em;
+  border-radius: 5px;
+  color: var(--textclr);
+  border: 2px solid var(--textclr);
+}
+
+.herocontainer button:active {
+  scale: 0.95;
+  background-color: var(--textclr);
+  color: #FFF;
+}
+
+@media (hover: hover) {
+  .herocontainer button:hover,
+  .herocontainer button:focus-visible {
+    background-color: var(--textclr);
+    color: #FFF;
+  }
+}
+
+@media (max-width:768px) {
+  .herocontainer {
+    padding: 1em;
+  }
+}
+</style>
